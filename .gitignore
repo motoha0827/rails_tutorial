@@ -41,4 +41,4 @@ yarn-debug.log*
 .yarn-integrity
 
 #General
-.SD_Store
+.DS_Store
