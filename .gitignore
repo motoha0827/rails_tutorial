@@ -40,5 +40,4 @@
 yarn-debug.log*
 .yarn-integrity
 
-#General
 .DS_Store
