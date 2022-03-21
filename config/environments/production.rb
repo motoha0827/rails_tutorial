@@ -43,7 +43,11 @@ Rails.application.configure do
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
+<<<<<<< HEAD
+  #  access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+=======
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+>>>>>>> feature/chapter7
   config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
