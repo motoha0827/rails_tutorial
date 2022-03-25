@@ -61,6 +61,7 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
+  # パスワード再設定の期限が切れている場合はtrueを返す
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
@@ -76,4 +77,3 @@ class User < ApplicationRecord
       self.activation_digest = User.digest(activation_token)
     end
 end
-
