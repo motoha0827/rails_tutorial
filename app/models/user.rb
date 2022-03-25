@@ -41,6 +41,15 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  def activate
+    update_attribute(:acticated, true)
+    update_attribute(:acticated, Time.zone.now)
+  end
+
+  def send_activation_email
+    UserMailer.account_account_activation(self).deliver_now
+  end
+
   private
     #メールアドレを小文字にする
     def downcase_email
