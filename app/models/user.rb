@@ -26,6 +26,7 @@ class User < ApplicationRecord
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
+    update(remember_digest: User.digest(remember_token))
   end
 
   # 渡されたトークンがダイジェストと一致したらtrueを返す
@@ -65,13 +66,13 @@ class User < ApplicationRecord
   end
 
   private
-    #メールアドレを小文字にする
-    def downcase_email
-      email.downcase!
-    end
+  #メールアドレスを小文字にする
+  def downcase_email
+    email.downcase!
+  end
 
-    def create_activation_digest
-      self.activation_token  = User.new_token
-      self.activation_digest = User.digest(activation_token)
-    end
+  def create_activation_digest
+    self.activation_token  = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
 end
