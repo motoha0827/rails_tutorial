@@ -40,7 +40,7 @@ chapter12
 
 ## update_attributeとupdateの違い
 # update_attribute
-レコードの、１つのカラムを変更できる。カラムめいと値を間ま区切る。
+レコードの、１つのカラムを変更できる。カラム名と値を区切る。
 ただし、バリデーションチェックがされないため使用は非推奨。
 # update!
 updateは保存の成否をtrueかfalseで返すのに対し、update!は保存に失敗したときに例外を返す。
