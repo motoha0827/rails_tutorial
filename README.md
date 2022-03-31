@@ -3,6 +3,7 @@ chapter12
 # %記法まとめ
 
 参考：https://qiita.com/mogulla3/items/46bb876391be07921743
+カッコは（）でも[]でも何でもおけ！
 
 ％、％Q
 ダブルクオーテーションと同様
