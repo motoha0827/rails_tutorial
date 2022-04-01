@@ -1,3 +1,24 @@
+chapter14
+
+feedの条件
+フォローしているユーザーのマイクロポストがフィードに含まれていること
+自分自身のマイクロポストもフィードに含まれていること
+フォローしていないユーザーのマイクロポストがフィードに含まれていないこと
+
+能動的関係と受動的関係
+
+複合キーインデックス
+follower_idとfollowed_idの組み合わせがユニークであることを保証
+add_index :relationships, :follower_id
+add_index :relationships, :followed_id
+add_index :relationships, [:follower_id, :followed_id], unique: true
+
+has_many through
+Railshaモデル名（単数形）に対応する外部キーを探す
+has_many :followeds, through: :active_relationships
+上記のコードだとfollowedsというシンボルを見てfollowedに変えて、
+relationshipsテーブルのfollowed_idを使い、対象のユーザを取得してくる。
+
 chapter13
 
 エラー
