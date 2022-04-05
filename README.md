@@ -1,5 +1,10 @@
 chapter14
 
+  Micropost.where("user_id IN (#{following_ids})
+                   OR user_id = :user_id", user_id: id)
+                   ↓
+  Micropost.where(user_id: following_ids).or(Micropost.where(user_id: id))
+
 feedの条件
 フォローしているユーザーのマイクロポストがフィードに含まれていること
 自分自身のマイクロポストもフィードに含まれていること
